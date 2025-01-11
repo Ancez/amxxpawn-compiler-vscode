@@ -1,9 +1,11 @@
 {
+  "repository": "https://github.com/Ancez/amxxpawn-compiler-vscode.git",
   "name": "amxx-pawn-compiler",
-  "displayName": "AMXX Pawn Compiler",
+  "displayName": "AMXXPawn Compiler",
   "publisher": "sentrix",
   "description": "Compile AMXX Pawn (.sma) files with one click!",
-  "version": "0.1.0",
+  "icon": "resources/extension-logo.png",
+  "version": "0.1.1",
   "engines": {
     "vscode": "^1.55.0"
   },
