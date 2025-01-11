@@ -1,0 +1,70 @@
+{
+  "name": "amxx-pawn-compiler",
+  "displayName": "AMXX Pawn Compiler",
+  "publisher": "sentrix",
+  "description": "Compile AMXX Pawn (.sma) files with one click!",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.55.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "amxx",
+    "pawn",
+    "compiler",
+    "sma",
+    "amxmodx"
+  ],
+  "activationEvents": [
+    "onLanguage:pawn",
+    "workspaceContains:**/*.sma"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "amxx-pawn-compiler.compile",
+        "title": "AMXX: Compile Pawn File",
+        "icon": {
+          "light": "resources/light/run-file.svg",
+          "dark": "resources/dark/run-file.svg"
+        }
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "amxx-pawn-compiler.compile",
+          "when": "resourceExtname == .sma",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "AMXX Pawn Compiler",
+      "properties": {
+        "amxxPawnCompiler.compilerPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to amxxpc.exe compiler. If not set, will look for amxxpc.exe in the current workspace."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.55.0",
+    "@types/glob": "^7.1.3",
+    "@types/node": "^12.11.7",
+    "eslint": "^7.19.0",
+    "glob": "^7.1.6",
+    "vscode-test": "^1.5.0"
+  }
+}
